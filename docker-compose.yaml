@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    build: .
+    volumes:
+        - ./:/app
+    command: sqlite3 /app/balsas.db
+
+  scrape:
+    build: .
+    volumes:
+        - ./:/app
+    command: bash /app/scrape.sh
